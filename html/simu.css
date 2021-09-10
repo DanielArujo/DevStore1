@@ -1,0 +1,54 @@
+body {
+    margin: 0px;
+}
+
+input, button {
+    outline: none;
+}
+
+
+* {
+    box-sizing: border-box;
+    cursor: default;
+    font-family: 'Roboto';
+}
+
+.conteiner-site{
+    display: flex;
+    flex-direction: row;
+    min-width: 100%;
+}
+
+.box-lateral{
+    padding: 3em;
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    align-items:  center;
+}
+
+.box-opcoes{
+    display: flex;
+    flex-direction: row;
+    padding: 0.5em 0em;
+}
+
+.box-aluno{
+    padding: 0.5em 0em;
+}
+
+.box-principal{
+    display: flex;
+    flex-direction: column;
+}
+
+.box-cabecalho{
+    padding: 0.3em 0.5em;
+}
+
+.inputs-cadastro{
+    display: flex;
+    flex-direction: row;
+}

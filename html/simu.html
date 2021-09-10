@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./simu.css">
     <title>Simulado</title>
 </head>
 <body>
@@ -13,8 +14,90 @@
                 <div class="book-svg"> <img src="../react/simulado/public/assets/images/book.svg"/> </div>
                 <div class="nome-site"><span>Dev</span>School</div>
             </header>
+    
+            <div class="ret-cinza"></div>
+            <div class="box-opcoes"> 
+                <div>Gerenciamento</div>
+                <div>setaprabaixo</div>
+            </div>
+            <div class="box-aluno">Alunos</div>
         </div>
 
+        <div class="box-principal">
+            <div class="box-cabecalho">
+                <div class="box-user-information">
+                    <div class="user-image"></div>
+                    <div class="user-name">Ola, <b> Bruno de Oliveira </b></div>
+                </div>
+                <div class="box-images">
+                    <div class="recarregar"></div>
+                    <div class="sair"></div>
+                </div>
+            </div>
+
+            <div class="box-body">
+                <div class="box-aluno">
+                    <div class="box-novo-aluno">
+                        <div class="barra"></div>
+                        <div class="aluno-novo">Novo Aluno</div>
+                    </div>
+
+                    <div class="inputs-cadastro">
+                        <div class="inputs-esquerda">
+                            <div class="format-inputs">
+                                <div class="aluno-nome">Nome: </div>
+                                <div class="input"> <input /> </div>
+                            </div>
+                            <div class="format-inputs">
+                                <div class="aluno-chamada">Chamada: </div>
+                                <div class="input"><input /> </div>
+                            </div>
+                        </div>
+
+                        <div class="inputs-direita">
+                            <div class="format-inputs">
+                                <div class="aluno-turma">Cruso: </div>
+                                <div class="input"> <input /> </div>
+                            </div>
+                            <div class="format-inputs">
+                                <div class="aluno-chamada">Turma: </div>
+                                <div class="input"><input /> </div>
+                            </div>
+                        </div>
+                        <div class="botao-cadastrar"><button> Cadastrar</button> </div>
+                    </div>
+                </div>
+
+                <div class="box-registros">
+                    <div class="box-aluno">
+                        <div class="barra"></div>
+                        <div class="aluno-novo">Alunos Matriculados</div>
+                    </div>
+                    <table class="tabela-usuarios">
+                        <tread>
+                            <tr>
+                                <th> ID </th>
+                                <th> NOME </th>
+                                <th> CHAMADA </th>
+                                <th> TURMA </th>
+                                <th> CURSO</th>
+                            </tr>
+                        </tread>
+
+                        <tbody>
+                            <tr>
+                                <td> 1 </td>
+                                <td> Daniel Araujo </td>
+                                <td> 09 </td>
+                                <td> Info C </td>
+                                <td> informatica </td>                              
+                            </tr>
+                        </tbody>
+                    </table>       
+                </div>
+            </div>
+        </div>
+            
     </div>
 </body>
 </html>

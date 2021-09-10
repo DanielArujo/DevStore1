@@ -19,13 +19,13 @@ app.get('/matricula', async (req, resp) => {
 
 app.post('/matricula', async (req, resp) => {
     try{
-        let tbmatricula = req.body;
+        let matri = req.body;
         let r = await db.tb_matricula.create(
             {
-                nm_aluno: tbmatricula.aluno,
-                nr_chamada: tbmatricula.chamada,
-                nm_curso: tbmatricula.curso,
-                nm_turma: tbmatricula.turma
+                nm_aluno: matri.aluno,
+                nr_chamada: matri.chamada,
+                nm_curso: matri.curso,
+                nm_turma: matri.turma
             })
 
             resp.send(r);
