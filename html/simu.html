@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./simu.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+    </style>
+
     <title>Simulado</title>
 </head>
 <body>
@@ -18,7 +23,7 @@
             <div class="ret-cinza"></div>
             <div class="box-opcoes"> 
                 <div>Gerenciamento</div>
-                <div>setaprabaixo</div>
+                <div> <button> <img src="../react/simulado/public/assets/images/seta-baixo.svg" alt="" /> </button> </div>
             </div>
             <div class="box-aluno">Alunos</div>
         </div>
@@ -26,18 +31,19 @@
         <div class="box-principal">
             <div class="box-cabecalho">
                 <div class="box-user-information">
-                    <div class="user-image"></div>
+                    <div class="user-image"> <img src="../react/simulado/public/assets/images/brunin-god.svg" alt="" > <div class="notification"> 3 </div> </img> </div>
                     <div class="user-name">Ola, <b> Bruno de Oliveira </b></div>
                 </div>
                 <div class="box-images">
-                    <div class="recarregar"></div>
-                    <div class="sair"></div>
+                    <div class="recarregar"> <button> <img src="../react/simulado/public/assets/images/reload.svg" alt="" /> </button> </div>
+                    <div class="sair"> <button> <img src="../react/simulado/public/assets/images/log-out.svg" alt="" /> </button> </div>
                 </div>
             </div>
+            <div class="line"></div>
 
             <div class="box-body">
-                <div class="box-aluno">
-                    <div class="box-novo-aluno">
+                <div class="box-organization-body">
+                    <div class="box-alunos-adm">
                         <div class="barra"></div>
                         <div class="aluno-novo">Novo Aluno</div>
                     </div>
@@ -68,21 +74,23 @@
                     </div>
                 </div>
 
-                <div class="box-registros">
-                    <div class="box-aluno">
+                <div class="box-organization-body">
+                    <div class="box-alunos-adm">
                         <div class="barra"></div>
                         <div class="aluno-novo">Alunos Matriculados</div>
                     </div>
                     <table class="tabela-usuarios">
-                        <tread>
+                        <thead>
                             <tr>
                                 <th> ID </th>
-                                <th> NOME </th>
-                                <th> CHAMADA </th>
-                                <th> TURMA </th>
-                                <th> CURSO</th>
+                                <th> Nome </th>
+                                <th> Chamada </th>
+                                <th> Turma </th>
+                                <th> Curso</th>
+                                <th class="options"></th>
+                                <th class="options"></th>
                             </tr>
-                        </tread>
+                        </thead>
 
                         <tbody>
                             <tr>
@@ -90,7 +98,27 @@
                                 <td> Daniel Araujo </td>
                                 <td> 09 </td>
                                 <td> Info C </td>
-                                <td> informatica </td>                              
+                                <td> informatica </td>
+                                <td class="buttom-option"> <button> <img src="../react/simulado/public/assets/images/edit.svg" alt="" /> </button> </td>
+                                <td class="buttom-option"> <button> <img src="../react/simulado/public/assets/images/trash.svg" alt="" /> </button> </td>                              
+                            </tr>
+                            <tr>
+                                <td> 1 </td>
+                                <td> Daniel Araujo </td>
+                                <td> 09 </td>
+                                <td> Info C </td>
+                                <td> informatica </td>
+                                <td class="buttom-option"> <button> <img src="../react/simulado/public/assets/images/edit.svg" alt="" /> </button> </td>
+                                <td class="buttom-option"> <button> <img src="../react/simulado/public/assets/images/trash.svg" alt="" /> </button> </td>                              
+                            </tr>
+                            <tr>
+                                <td> 1 </td>
+                                <td> Daniel Araujo </td>
+                                <td> 09 </td>
+                                <td> Info C </td>
+                                <td> informatica </td>
+                                <td class="buttom-option"> <button> <img src="../react/simulado/public/assets/images/edit.svg" alt="" /> </button> </td>
+                                <td class="buttom-option"> <button> <img src="../react/simulado/public/assets/images/trash.svg" alt="" /> </button> </td>                              
                             </tr>
                         </tbody>
                     </table>       
