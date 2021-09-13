@@ -1,20 +1,20 @@
-import { Container } from "../cabecalho/styled";
+import  {Container}  from "./styled";
 
 
 export default function Index(){
     return(
         <Container>
-            <div class="box-cabecalho">
-                <div class="box-user-information">
-                    <div class="user-image"> <img src="../react/simulado/public/assets/images/brunin-god.svg" alt="" > <div class="notification"> 3 </div> </img> </div>
-                    <div class="user-name">Ola, <b> Bruno de Oliveira </b></div>
+            <div className="box-cabecalho">
+                <div className="box-user-information">
+                    <div className="user-image"> <img src="/assets/images/brunin-god.svg" alt="" /> <div className="notification"> 3 </div> </div>
+                    <div className="user-name">Ola, <b> Bruno de Oliveira </b></div>
                 </div>
-                <div class="box-images">
-                    <div class="recarregar"> <button> <img src="../react/simulado/public/assets/images/reload.svg" alt="" /> </button> </div>
-                    <div class="sair"> <button> <img src="../react/simulado/public/assets/images/log-out.svg" alt="" /> </button> </div>
+                <div className="box-images">
+                    <div className="recarregar"> <button> <img src="/assets/images/reload.svg" alt="" /> </button> </div>
+                    <div className="sair"> <button> <img src="/assets/images/log-out.svg" alt="" /> </button> </div>
                 </div>
             </div>
-            <div class="line"></div>
+            <div className="line" />
         </Container>
     )
 }
