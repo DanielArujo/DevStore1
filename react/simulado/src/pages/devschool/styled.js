@@ -187,7 +187,7 @@ thead{
 }
 
 tbody{
-    font-size: 14px;
+    font-size: 15px;
 }
 
 th{
@@ -195,7 +195,6 @@ th{
     color: white;
     text-align: left;
 }
-
 
 
 td{
@@ -226,7 +225,7 @@ td button:hover{
 const Conteudo = styled.div`
     display: flex;
     flex-direction: column;
-    width: 100vw;
+    min-width: 100vw;
     min-height: 100vh;
 
 `
