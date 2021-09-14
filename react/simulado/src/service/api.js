@@ -12,7 +12,7 @@ export default class Api{
     }
 
     async inserir(nome, chamada, curso, turma){
-        let r = await api.post('/matricula', {nome, chamada, curso, turma})
+        let r = await api.post('/matricula', {nome, chamada, curso, turma}) 
         return r.data;
     }
 
