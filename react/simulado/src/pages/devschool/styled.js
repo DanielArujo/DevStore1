@@ -3,14 +3,14 @@ import styled from "styled-components";
 const Container = styled.div`
     display: flex;
     flex-direction: row;
-    min-width: 100%;
+    min-width: 100%;   
 
     input{
     outline: none;
     cursor: text;
     }
 
-   
+
 
 .box-user-information{
     display: flex;
@@ -88,7 +88,7 @@ const Container = styled.div`
 .box-body{
     background-color: #F5F5F5;
     min-height: 100vh;
-
+    width: 66.5em;
     padding: 2.5em 2.5em;
 }
 
@@ -175,6 +175,8 @@ background-color: #e840cd;
     margin-right: 2em
 }
 
+
+
 .tabela-usuarios{
     border-collapse: collapse;
     width: 100%;
@@ -190,15 +192,19 @@ tbody{
     font-size: 15px;
 }
 
+
 th{
-    padding: 1.5em  2em;
+    padding: 1.5em  1em;
     color: white;
     text-align: left;
 }
 
+.linha-alternada{
+    background-color: #F2EAE9;
+}
 
 td{
-    padding: 1.5em 2em;
+    padding: 1.5em 1em;
     color: #6D6868;
 }
 
@@ -211,12 +217,22 @@ td button{
     cursor: pointer;
 }
 
+.buttom-option > button{
+    visibility: hidden;
+}
+
+tr:hover{
+    .buttom-option > button{
+    visibility: visible;
+} 
+}
+
 td button:hover{
     opacity: 100%;
 }
 
 .buttom-option{
-    padding: 1.5em 0em;
+    padding: 1.5em 0.5em;
 }
 
 
@@ -225,7 +241,7 @@ td button:hover{
 const Conteudo = styled.div`
     display: flex;
     flex-direction: column;
-    min-width: 100vw;
+    width: 100vw;
     min-height: 100vh;
 
 `

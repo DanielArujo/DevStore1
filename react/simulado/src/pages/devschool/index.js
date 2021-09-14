@@ -30,12 +30,18 @@ export default function Index() {
 
     async function inserir(){
 
-        if(idAlterando == 0){
+        if(idAlterando === 0){
         let r = await api.inserir(nome, chamada, curso, turma);
-        alert('Aluno inserido!!!')
+            if(r.erro)
+                alert('Deu eroo')
+            else
+                alert('Aluno inserido!!!')
         } else {
-        let r = await api.alterar(idAlterando, nome, chamada, curso, turma) 
-        alert('Aluno alterado!!!')   
+        let r = await api.alterar(idAlterando, nome, chamada, curso, turma)
+            if(r.erro)
+                alert(r.erro)
+            else
+                alert('Aluno alterado!!!')   
         }
 
         limparCampos();
@@ -66,6 +72,12 @@ export default function Index() {
         setIdAlerando(item.id_matricula)
     }
 
+    function conferirCampo( campo ){
+        if(!(campo === null || campo === undefined || campo === '')){
+
+        }
+    }
+
     useEffect( () => { listar() }, [] )
 
     return (
@@ -73,7 +85,7 @@ export default function Index() {
             <Menu />
             <Conteudo>
             <Cabecalho />
-                <div className="box-principal">
+            <div className="box-principal">
                 <div className="box-body">
                     <div className="box-organization-body">
                         <div className="box-alunos-adm">
@@ -95,13 +107,13 @@ export default function Index() {
 
                             <div className="inputs-direita">
                                 <div className="format-inputs">
-                                    <div className="aluno-turma">Cruso: </div>
-                                    <div className="input"> <input type="text" value={curso} onChange={e => setCurso(e.target.value)} /> </div>
-                                </div>
-                                <div className="format-inputs">
                                     <div className="aluno-chamada">Turma: </div>
                                     <div className="input"><input type="text" value={turma} onChange={e => setTurma(e.target.value)} /> </div>
                                 </div>
+                                <div className="format-inputs">
+                                    <div className="aluno-turma">Curso: </div>
+                                    <div className="input"> <input type="text" value={curso} onChange={e => setCurso(e.target.value)} /> </div>
+                                </div> 
                             </div>
                             <div className="botao-cadastrar"><button onClick={inserir}> {idAlterando === 0 ? 'Cadastrar' : 'Alterar' } </button> </div>
                         </div>
@@ -120,16 +132,18 @@ export default function Index() {
                                     <th> Chamada </th>
                                     <th> Turma </th>
                                     <th> Curso</th>
-                                    <th className="options"></th>
-                                    <th className="options"></th>
+                                    <th className="buttom-option"></th>
+                                    <th className="buttom-option"></th>
                                 </tr>
                             </thead>
 
                             <tbody>
-                                {alunos.map(item => 
-                                    <tr>
+                                {alunos.map((item, i) => 
+                                    <tr className= { i % 2 === 0 ? "" : "linha-alternada"}>
                                         <td> {item.id_matricula} </td>
-                                        <td> {item.nm_aluno} </td>
+                                        <td title={item.nm_aluno }>
+                                             {item.nm_aluno != null && item.nm_aluno.length >= 30 ? item.nm_aluno.substr(0, 30) + '...' : item.nm_aluno } 
+                                        </td>
                                         <td> {item.nr_chamada} </td>
                                         <td> {item.nm_turma} </td>
                                         <td> {item.nm_curso} </td>

@@ -5,8 +5,8 @@ const Container = styled.div `
     flex-direction: column;
 
     background-color: #2B3031;
-    min-height: 100vh;  
-
+    height: 100vh;  
+    
     position: sticky;
     top: 0px;
 

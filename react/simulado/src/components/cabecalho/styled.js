@@ -75,10 +75,10 @@ const Container = styled.div`
 }
 
 .line{
-    border: solid 0.5px;
+    border-bottom: solid 0.5px;
     width: 95%;
     color:#d3cbcb;
-    align-self: center;
+    align-self: center; 
 }
 
 `
