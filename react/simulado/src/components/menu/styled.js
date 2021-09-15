@@ -6,7 +6,8 @@ const Container = styled.div `
 
     background-color: #2B3031;
     height: 100vh;  
-    
+
+
     position: sticky;
     top: 0px;
 
@@ -14,12 +15,21 @@ header{
     display: flex;
     flex-direction: row;
 
+    
     align-items: center;
     font-size: 25px;
     font-weight: 700;
 
     padding: 1.5em 3.5em 1.5em 2em;
     color: white;
+}
+
+header span{
+    color: #10EAEA;
+}
+
+header img{
+    margin-right: 5px;
 }
 
 .box-lateral header span{
@@ -51,7 +61,7 @@ header{
     background-color: white;
 
     font-weight: 700;
-    border-left: 4px solid  #EA10C7;
+    border-left: 4px solid  #10EAEA;
 
 }
 

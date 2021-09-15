@@ -91,6 +91,7 @@ export default function Index() {
 
     return (
         <Container>
+            <Container>
             <ToastContainer />
             <LoadingBar color='#4607ac' ref={loading} />
             <Menu />
@@ -99,50 +100,72 @@ export default function Index() {
                 <div className="box-principal">
                     <div className="box-body">
                         <div className="box-organization-body">
-                            <div className="box-alunos-adm">
+                            <div className="box-produtos-adm">
                                 <div className="barra"></div>
-                                <div className="aluno-novo"> {idAlterando === 0 ? 'Novo Aluno' : "Alterando registro " + idAlterando } </div>
+                                <div className="produto-novo"> {idAlterando === 0 ? 'Novo Produto' : "Alterando produto " + idAlterando } </div>
                             </div>
+                            <div className="all-inputs">
+                                <div className="all-registers">
+                                    <div className="inputs-cadastro">
+                                        <div className="inputs-esquerda">
+                                            <div className="format-inputs">
+                                                <div className="produto-nome">Nome: </div>
+                                                <div className="input"> <input type="text" value={nome} onChange={e => setNome(e.target.value)} /> </div>
+                                            </div>
+                                            <div className="format-inputs">
+                                                <div className="produto-chamada"> Categoria: </div>
+                                                <div className="input"><input type="text" value={chamada} onChange={e => setChamada(e.target.value)} /> </div>
+                                            </div>
+                                            <div className="format-inputs">
+                                                <div className="produto-avaliacao">Avaliação: </div>
+                                                <div className="input"> <input type="text" value={nome} onChange={e => setNome(e.target.value)} /> </div>
+                                            </div>
+                                        </div>
 
-                            <div className="inputs-cadastro">
-                                <div className="inputs-esquerda">
-                                    <div className="format-inputs">
-                                        <div className="aluno-nome">Nome: </div>
-                                        <div className="input"> <input type="text" value={nome} onChange={e => setNome(e.target.value)} /> </div>
+                                        <div className="inputs-direita">
+                                            <div className="format-inputs">
+                                                <div className="produto-preco-de">Preço DE: </div>
+                                                <div className="input"><input type="text" value={turma} onChange={e => setTurma(e.target.value)} /> </div>
+                                            </div>
+                                            <div className="format-inputs">
+                                                <div className="produto-preco-por">Preço POR: </div>
+                                                <div className="input"> <input type="text" value={curso} onChange={e => setCurso(e.target.value)} /> </div>
+                                            </div> 
+                                            <div className="format-inputs">
+                                                <div className="estoque">Estoque: </div>
+                                                <div className="input"> <input type="text" value={nome} onChange={e => setNome(e.target.value)} /> </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div className="format-inputs">
-                                        <div className="aluno-chamada"> Chamada: </div>
-                                        <div className="input"><input type="text" value={chamada} onChange={e => setChamada(e.target.value)} /> </div>
+                                    <div className="inputs-maiores">
+                                        <div className="cadastrar-imagens">
+                                            <div> Imagem: </div>
+                                            <input/>
+                                        </div>
+                                        <div className="cadastrar-desc">
+                                            <div> Descrição: </div>
+                                            <textarea/>
+                                        </div>
                                     </div>
                                 </div>
-
-                                <div className="inputs-direita">
-                                    <div className="format-inputs">
-                                        <div className="aluno-chamada">Turma: </div>
-                                        <div className="input"><input type="text" value={turma} onChange={e => setTurma(e.target.value)} /> </div>
-                                    </div>
-                                    <div className="format-inputs">
-                                        <div className="aluno-turma">Curso: </div>
-                                        <div className="input"> <input type="text" value={curso} onChange={e => setCurso(e.target.value)} /> </div>
-                                    </div> 
+                                    <div className="botao-cadastrar"><button onClick={inserir}> {idAlterando === 0 ? 'Cadastrar' : 'Alterar' }  </button> </div>
                                 </div>
-                                <div className="botao-cadastrar"><button onClick={inserir}> {idAlterando === 0 ? 'Cadastrar' : 'Alterar' }  </button> </div>
-                            </div>
                         </div>
 
                         <div className="box-organization-body">
-                            <div className="box-alunos-adm">
+                            <div className="box-produtos-adm">
                                 <div className="barra"></div>
-                                <div className="aluno-novo">Alunos Matriculados</div>
+                                <div className="produto-novo">Produtos Cadastrados</div>
                             </div>
-                            <table className="tabela-usuarios">
+                            <table className="tabela-produtos">
                                 <thead>
                                     <tr>
+                                        <th> </th> 
                                         <th> ID </th>
-                                        <th> Nome </th>
-                                        <th> Chamada </th>
-                                        <th> Turma </th>
-                                        <th> Curso</th>
+                                        <th> Produto </th>
+                                        <th> Categoria </th>
+                                        <th> Preço </th>
+                                        <th> Estoque</th>
                                         <th className="buttom-option"></th>
                                         <th className="buttom-option"></th>
                                     </tr>
@@ -170,6 +193,7 @@ export default function Index() {
                     </div>
                 </div>
             </Conteudo>
+        </Container>
         </Container>
     )
     }

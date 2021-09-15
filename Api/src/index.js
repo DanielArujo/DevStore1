@@ -1,104 +1,81 @@
 import db from "./db.js";
-import express from 'express';
+import express, { application } from 'express';
 import cors from 'cors';
 
 const app = express()
 app.use(cors());
 app.use(express.json())
 
-
-app.get('/matricula', async (req, resp) => {
-    try{
-        let r = await db.tb_matricula.findAll({order: [['id_matricula', 'desc']]});
-
-        resp.send(r);
-
-    }catch(e) {
-        resp.send(e.toString())
-    }
+app.get('/produto', async(req, resp) => {
+try{
+    let r = await db.tb_produto.findAll()
+    resp.send(r);
+}catch(e){
+    resp.send(e.toString())
+}
 })
 
-app.post('/matricula', async (req, resp) => {
-    try{
-        let matri = req.body;
-        if( isNaN(matri.chamada) || matri.chamada <=0 )
-            return resp.send({erro: 'Numero da chamada invalido!'});
+app.post('/produto', async(req, resp) =>  {
+try{
 
-        if(matri.nome == '' ||  matri.curso == '' || matri.turma == ''){
-            return resp.send({erro: 'Todos os campos devem ser preenchidos!'})
-        }
-    
-       let chamada = await db.tb_matricula.findOne({where : { nr_chamada: matri.chamada} })
-       let turma = await db.tb_matricula.findOne({where : { nm_turma: matri.turma} })
+    let {produto, categoria, precoDe, precoPor, avaliacao, produtoDesc , estoque, imgProduto } = req.body;
 
-       if(chamada != null  && turma != null){
-           return resp.send({erro: 'Aluno ja inserido!'})
-       }
-
-
-        let r = await db.tb_matricula.create(
-            {
-                nm_aluno: matri.nome,
-                nr_chamada: matri.chamada,
-                nm_curso: matri.curso,
-                nm_turma: matri.turma
-            })
-
-            resp.send(r);
-
-    }catch(e){
-        resp.send(e.toString())
-    }
-})
-app.delete('/matricula/:id', async (req, resp) => {
-    try{
-        let param = req.params;
-
-        let r = await db.tb_matricula.destroy({where: {id_matricula: param.id}})
-
-        resp.sendStatus(200)
-
-    }catch(e){
-        resp.send(e.toString())
-    }
+    let r = await db.tb_produto.create({
+        nm_produto: produto,
+        ds_categoria: categoria,
+        vl_preco_de: precoDe,
+        vl_preco_por: precoPor,
+        vl_avaliacao: avaliacao,
+        ds_produto: produtoDesc,
+        qtd_estoque: estoque,
+        img_produto: imgProduto
+    })
+    resp.send(r)
+} catch(e){
+    resp.send(e.toString())
+}
 })
 
-app.put('/matricula/:id', async (req, resp) => {
+app.put('/produto/:id', async(req, resp) => {
     try{
-        let id = req.params.id;
-        let campos = req.body;
+        let {id} = req.params;
 
-        if( isNaN(campos.chamada) || campos.chamada <=0 )
-            return resp.send({erro: 'Numero da chamada invalido'});
-
-        if(campos.nome == '' ||  campos.curso == '' || campos.turma == ''){
-            return resp.send({erro: 'Todos os campos devem ser preenchidos!'})
-        }
-    
-        let chamada = await db.tb_matricula.findOne({where : { nr_chamada: campos.chamada} })
-        let turma = await db.tb_matricula.findOne({where : { nm_turma: campos.turma} })
-
-        if(chamada != null  && turma != null){
-            return resp.send({erro: 'Aluno ja inserido!'})
-        }
-
-        let r = await db.tb_matricula.update({
-            nm_aluno: campos.nome,
-            nr_chamada: campos.chamada,
-            nm_curso: campos.curso,
-            nm_turma: campos.turma
-        },
+        let {produto, categoria, precoDe, precoPor, avaliacao, produtoDesc, estoque, imgProduto} = req.body;
+        
+        let r = await db.tb_produto.update({
+            nm_produto: produto,
+            ds_categoria: categoria,
+            vl_preco_de: precoDe,
+            vl_preco_por: precoPor,
+            vl_avaliacao: avaliacao,
+            ds_produto: produtoDesc,
+            qtd_estoque: estoque,
+            img_produto: imgProduto
+        }, 
         {
-            where: {
-                id_matricula: id
-            }
+            where: {id_produto: id} 
         })
+    
+
+        resp.sendStatus(200)
+    } catch(e){
+        resp.send(e.toString())
+    }
+})
+
+app.delete('/produto/:id', async (req, resp) => {
+    try{
+        let {id} = req.params;
+        
+        let r = await db.tb_produto.destroy({where: { id_produto: id } })
 
         resp.sendStatus(200)
     }catch(e){
         resp.send(e.toString())
     }
+
 })
+
 
 app.listen(process.env.PORT,
 

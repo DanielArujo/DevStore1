@@ -4,8 +4,8 @@ export default function Index(){
     return(
         <Container>
              <header>
-                <div className="book-svg"> <img src="/assets/images/book.svg" alt="" /> </div>
-                <div className="nome-site"><span>Dev</span>School</div>
+                <div className="fox-svg"> <img src="/assets/images/fox-logo.svg" alt="" /> </div>
+                <div className="nome-site"><span>Dev</span>Store</div>
             </header>
     
             <div className="ret-cinza"></div>
